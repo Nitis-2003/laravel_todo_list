@@ -25,4 +25,9 @@ class TaskController extends Controller
         $task = Task::all();
         return view('pages.home',['task'=>$task]);
     }
+
+    public function delete($id){
+        Task::destroy($id);
+        return redirect()->route('home');
+    }
 }
